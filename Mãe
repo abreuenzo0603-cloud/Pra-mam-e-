@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#fbe4ea">
+<title>Para a mulher mais especial da minha vida ❤️</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,500;0,600;1,400&family=Caveat:wght@500;600&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--rosa:#f6c1cf;--rosa2:#fbe4ea;--rosa3:#e58fa7;--creme:#fff8ef;--ouro:#c9a24d;--ouro2:#e9cf8e;--texto:#5a4047;--titulo:'Great Vibes','Brush Script MT',cursive;--serif:'Playfair Display',Georgia,serif;--sans:'Quicksand','Segoe UI',Arial,sans-serif;--mao:'Caveat','Comic Sans MS',cursive}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--texto);background:linear-gradient(180deg,var(--creme),var(--rosa2) 50%,var(--creme));overflow-x:hidden;line-height:1.7}
+body.travado{overflow:hidden;height:100vh}
+h1,h2{font-family:var(--titulo);font-weight:400;color:var(--rosa3)}
+.ouro{background:linear-gradient(90deg,var(--ouro),var(--ouro2),var(--ouro));-webkit-background-clip:text;background-clip:text;color:transparent}
+svg.fl{width:1em;height:1em;display:inline-block}
+
+/* pétalas flutuantes */
+#petalas{position:fixed;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+.petala{position:absolute;top:-8vh;opacity:.0;animation:cair linear infinite;will-change:transform}
+@keyframes cair{0%{transform:translate3d(0,0,0) rotate(0);opacity:0}10%{opacity:.75}90%{opacity:.6}100%{transform:translate3d(var(--dx),112vh,0) rotate(540deg);opacity:0}}
+
+/* TELA INICIAL */
+#inicio{position:fixed;inset:0;z-index:50;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:28px;background:radial-gradient(circle at 50% 30%,#fff 0,var(--rosa2) 55%,var(--rosa) 100%);transition:opacity 1.4s ease,transform 1.4s ease,visibility 1.4s}
+#inicio.saindo{opacity:0;transform:scale(1.15);visibility:hidden}
+.ramo{position:absolute;width:min(46vw,230px);opacity:.9;animation:balanca 7s ease-in-out infinite}
+.ramo.a{top:-10px;left:-14px;transform-origin:top left}
+.ramo.b{bottom:-10px;right:-14px;transform:rotate(180deg);transform-origin:bottom right;animation-delay:-3s}
+@keyframes balanca{50%{rotate:5deg}}
+.moldura{position:relative;max-width:520px;padding:38px 22px;border:1px solid var(--ouro2);border-radius:28px;background:rgba(255,255,255,.55);backdrop-filter:blur(6px);box-shadow:0 20px 60px rgba(229,143,167,.3);animation:entra 1.6s ease both}
+.moldura::before{content:"";position:absolute;inset:7px;border:1px solid rgba(201,162,77,.45);border-radius:22px;pointer-events:none}
+@keyframes entra{from{opacity:0;transform:translateY(30px) scale(.96)}}
+.sup{font-family:var(--serif);font-style:italic;letter-spacing:.14em;font-size:.82rem;color:var(--ouro);text-transform:uppercase;margin-bottom:6px}
+#inicio h1{font-size:clamp(2.9rem,13vw,4.8rem);line-height:1.05;margin:6px 0 16px;text-shadow:0 2px 10px rgba(255,255,255,.8)}
+#inicio p.msg{font-family:var(--serif);font-size:1.08rem;margin-bottom:28px}
+.btn{font-family:var(--sans);font-weight:600;font-size:1.02rem;border:none;cursor:pointer;color:#fff;padding:15px 34px;border-radius:50px;background:linear-gradient(135deg,var(--rosa3),#d4708e);box-shadow:0 8px 24px rgba(212,112,142,.45),inset 0 0 0 1.5px rgba(233,207,142,.9);transition:transform .3s,box-shadow .3s;animation:pulsa 2.6s ease-in-out infinite}
+.btn:active{transform:scale(.95)}
+@keyframes pulsa{50%{box-shadow:0 8px 34px rgba(212,112,142,.7),inset 0 0 0 1.5px var(--ouro2);transform:scale(1.04)}}
+.coracao-bate{display:inline-block;animation:bate 1.4s infinite}
+@keyframes bate{0%,60%,100%{transform:scale(1)}15%{transform:scale(1.3)}30%{transform:scale(1)}45%{transform:scale(1.2)}}
+
+/* CONTEÚDO */
+#site{opacity:0;visibility:hidden;position:relative;z-index:2;transition:opacity 1.6s ease}
+#site.aberto{opacity:1;visibility:visible}
+section{padding:70px 20px;max-width:900px;margin:0 auto;text-align:center;position:relative}
+.sec-titulo{font-size:clamp(2.3rem,9vw,3.4rem);line-height:1.1}
+.divisor{display:flex;align-items:center;justify-content:center;gap:12px;margin:10px auto 34px;color:var(--ouro);font-size:1.3rem}
+.divisor::before,.divisor::after{content:"";height:1px;width:70px;background:linear-gradient(90deg,transparent,var(--ouro))}
+.divisor::after{transform:scaleX(-1)}
+.rev{opacity:0;transform:translateY(40px);transition:opacity 1.1s ease,transform 1.1s ease}
+.rev.vis{opacity:1;transform:none}
+
+/* GALERIA */
+.galeria{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+@media(min-width:700px){.galeria{grid-template-columns:repeat(3,1fr);gap:22px}}
+.polaroid{background:#fff;padding:9px 9px 6px;border-radius:6px;box-shadow:0 10px 26px rgba(160,100,115,.22);cursor:pointer;transition:transform .45s cubic-bezier(.2,.9,.3,1.3);rotate:var(--r);border:1px solid #f5e6d0}
+.polaroid:nth-child(odd){--r:-2deg}.polaroid:nth-child(even){--r:2deg}
+.polaroid:hover,.polaroid:active{transform:scale(1.05) rotate(0);z-index:3}
+.foto{aspect-ratio:1/1.05;width:100%;border-radius:3px;overflow:hidden;background:linear-gradient(135deg,var(--rosa2),var(--creme));display:flex;align-items:center;justify-content:center;flex-direction:column;color:var(--rosa3);font-size:.78rem}
+.foto img{width:100%;height:100%;object-fit:cover;display:block}
+.foto .fl{font-size:2.6rem;margin-bottom:4px}
+.legenda{font-family:var(--mao);font-size:1.18rem;line-height:1.25;padding:9px 4px 4px;color:#7a5560}
+#lightbox{position:fixed;inset:0;z-index:100;background:rgba(60,30,40,.88);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;opacity:0;visibility:hidden;transition:.4s}
+#lightbox.on{opacity:1;visibility:visible}
+#lightbox .cartao{background:#fff;padding:12px 12px 8px;border-radius:8px;max-width:94vw;transform:scale(.7) rotate(-3deg);transition:transform .5s cubic-bezier(.2,.9,.3,1.3);box-shadow:0 20px 70px rgba(0,0,0,.5)}
+#lightbox.on .cartao{transform:none}
+#lightbox .cartao img{max-width:100%;max-height:68vh;display:block;border-radius:4px}
+#lightbox .cartao .foto{width:min(80vw,380px);font-size:1rem}
+#lightbox p{font-family:var(--mao);font-size:1.5rem;text-align:center;color:#7a5560;padding:8px}
+#fechar{position:absolute;top:calc(14px + env(safe-area-inset-top,0px));right:18px;font-size:2.4rem;color:#fff;background:none;border:none;cursor:pointer;line-height:1}
+
+/* CARTA */
+.papel{position:relative;max-width:620px;margin:0 auto;padding:46px 26px 40px 36px;text-align:left;background:repeating-linear-gradient(transparent 0 33px,rgba(229,143,167,.28) 33px 34px),#fffdf6;border-radius:6px 14px 10px 8px;box-shadow:0 18px 50px rgba(150,100,100,.25),0 0 0 1px #f1e2c6;rotate:-.6deg}
+.papel::before{content:"";position:absolute;left:22px;top:0;bottom:0;width:1px;background:rgba(229,100,120,.35)}
+.papel p{font-family:var(--mao);font-size:clamp(1.3rem,5vw,1.55rem);line-height:34px;margin-bottom:34px;color:#4a3239;opacity:0;transform:translateY(14px);transition:opacity 1.2s,transform 1.2s}
+.papel p.vis{opacity:1;transform:none}
+.papel .assin{text-align:right;font-size:1.9rem;color:var(--rosa3);margin-bottom:0}
+.selo{position:absolute;top:-18px;right:20px;font-size:2.2rem;filter:drop-shadow(0 4px 4px rgba(0,0,0,.2))}
+
+/* MOTIVOS */
+.motivos{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+@media(min-width:700px){.motivos{grid-template-columns:repeat(3,1fr);gap:20px}}
+.motivo{padding:28px 14px;background:rgba(255,255,255,.8);border:1px solid var(--ouro2);border-radius:20px;box-shadow:0 8px 22px rgba(229,143,167,.2);font-family:var(--serif);font-size:1.02rem;transition:transform .4s,box-shadow .4s;position:relative;overflow:hidden}
+.motivo:hover,.motivo:active{transform:translateY(-6px) scale(1.03);box-shadow:0 14px 30px rgba(229,143,167,.4)}
+.motivo .ic{display:block;font-size:2rem;margin-bottom:8px;animation:flutua 3.4s ease-in-out infinite}
+.motivo:nth-child(2n) .ic{animation-delay:-1.2s}.motivo:nth-child(3n) .ic{animation-delay:-2.2s}
+@keyframes flutua{50%{transform:translateY(-6px) rotate(8deg)}}
+
+/* SURPRESA */
+.surpresa .btn{background:linear-gradient(135deg,var(--ouro),#b88a2f);box-shadow:0 8px 24px rgba(184,138,47,.4),inset 0 0 0 1.5px #fff6}
+#final{position:fixed;inset:0;z-index:90;display:flex;align-items:center;justify-content:center;padding:26px;text-align:center;background:radial-gradient(circle,#fff 0,var(--rosa2) 60%,var(--rosa) 100%);opacity:0;visibility:hidden;transition:opacity 1.2s,visibility 1.2s}
+#final.on{opacity:1;visibility:visible}
+#final .caixa{max-width:480px;position:relative;z-index:3}
+#final h2{font-size:clamp(2.2rem,10vw,3.4rem);margin-bottom:16px}
+#final p{font-family:var(--serif);font-style:italic;font-size:1.3rem;line-height:1.8;margin-bottom:28px}
+#final .btn{font-size:.92rem;padding:12px 26px;animation:none}
+#chuva{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:1}
+.chove{position:absolute;bottom:-40px;animation:sobe linear forwards}
+@keyframes sobe{to{transform:translate3d(var(--dx),-115vh,0) rotate(var(--rot));opacity:0}}
+
+/* RODAPÉ */
+footer{padding:70px 20px calc(60px + env(safe-area-inset-bottom,0px));text-align:center;position:relative;z-index:2}
+footer .l1{font-family:var(--serif);font-style:italic;font-size:1.15rem}
+footer .l2{font-family:var(--titulo);font-size:clamp(2.4rem,10vw,3.6rem);margin-top:8px;color:var(--rosa3)}
+footer .fl{color:var(--rosa3);font-size:1.6rem;margin:0 3px}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01s!important;transition-duration:.01s!important}}
+</style>
+</head>
+<body class="travado">
+
+<!-- Molde da flor (usado em todo o site) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="flor" viewBox="0 0 100 100">
+<g fill="#f6b3c6" stroke="#e58fa7" stroke-width="1.5">
+<ellipse cx="50" cy="26" rx="14" ry="22"/><ellipse cx="50" cy="26" rx="14" ry="22" transform="rotate(72 50 50)"/><ellipse cx="50" cy="26" rx="14" ry="22" transform="rotate(144 50 50)"/><ellipse cx="50" cy="26" rx="14" ry="22" transform="rotate(216 50 50)"/><ellipse cx="50" cy="26" rx="14" ry="22" transform="rotate(288 50 50)"/></g>
+<circle cx="50" cy="50" r="10" fill="#e9cf8e" stroke="#c9a24d" stroke-width="1.5"/></symbol>
+<symbol id="ramo" viewBox="0 0 200 200">
+<path d="M0 10 Q80 20 150 110 T190 200" fill="none" stroke="#a9c3a0" stroke-width="3"/>
+<g fill="#bcd6b2"><ellipse cx="45" cy="30" rx="16" ry="7" transform="rotate(30 45 30)"/><ellipse cx="95" cy="62" rx="16" ry="7" transform="rotate(55 95 62)"/><ellipse cx="135" cy="105" rx="16" ry="7" transform="rotate(70 135 105)"/></g>
+<use href="#flor" x="10" y="0" width="52" height="52"/><use href="#flor" x="85" y="30" width="46" height="46"/><use href="#flor" x="130" y="95" width="44" height="44"/><use href="#flor" x="165" y="150" width="34" height="34"/></symbol>
+</defs></svg>
+
+<div id="petalas"></div>
+
+<!-- TELA INICIAL -->
+<div id="inicio">
+  <svg class="ramo a"><use href="#ramo"/></svg>
+  <svg class="ramo b"><use href="#ramo"/></svg>
+  <div class="moldura">
+    <div class="sup">Para a mulher mais especial da minha vida</div>
+    <h1>Feliz aniversário, mãe! <span class="coracao-bate">❤️</span></h1>
+    <p class="msg">Hoje é o seu dia, mas quem ganhou o maior presente da vida fui eu, por ter você como mãe.</p>
+    <button class="btn" id="abrir">🎁 Abrir meu presente</button>
+  </div>
+</div>
+
+<!-- SITE -->
+<main id="site">
+
+  <section id="historia">
+    <h2 class="sec-titulo rev">Um pouquinho da nossa história</h2>
+    <div class="divisor rev">✦ ❀ ✦</div>
+    <div class="galeria" id="galeria"></div>
+    <p class="rev" style="margin-top:22px;font-size:.85rem;opacity:.7">Toque em uma foto para ampliar 💕</p>
+  </section>
+
+  <section id="carta">
+    <h2 class="sec-titulo rev">Uma carta para você</h2>
+    <div class="divisor rev">✦ ❀ ✦</div>
+    <!-- EDITE O TEXTO DA CARTA AQUI -->
+    <div class="papel rev">
+      <span class="selo">💌</span>
+      <p>Mãe, hoje é um dia muito especial, e eu não poderia deixar passar sem tentar expressar o quanto você significa para mim.</p>
+      <p>Obrigado por cada cuidado, cada conselho, cada esforço e por nunca deixar de estar ao meu lado.</p>
+      <p>Talvez eu nem sempre consiga demonstrar, talvez às vezes faltem palavras, mas quero que você saiba que sou muito grato por ter você na minha vida.</p>
+      <p>Você é uma das maiores bênçãos que Deus me deu.</p>
+      <p>Espero que seu dia seja tão especial quanto você é para mim. Que Deus continue iluminando seus caminhos, protegendo sua vida e realizando os desejos do seu coração.</p>
+      <p>Eu te amo muito, mãe. Feliz aniversário! ❤️</p>
+      <p class="assin">Seu filho 💗</p>
+    </div>
+  </section>
+
+  <section id="motivos">
+    <h2 class="sec-titulo rev">Motivos pelos quais eu te amo</h2>
+    <div class="divisor rev">✦ ❀ ✦</div>
+    <!-- EDITE OS MOTIVOS AQUI -->
+    <div class="motivos" id="listaMotivos">
+      <div class="motivo rev"><span class="ic">🌸</span>Pelo seu carinho.</div>
+      <div class="motivo rev"><span class="ic">💪</span>Pela sua força.</div>
+      <div class="motivo rev"><span class="ic">🤍</span>Por nunca desistir de mim.</div>
+      <div class="motivo rev"><span class="ic">🌷</span>Por cada conselho.</div>
+      <div class="motivo rev"><span class="ic">✨</span>Por todos os momentos.</div>
+      <div class="motivo rev"><span class="ic">❤️</span>Simplesmente por ser você.</div>
+    </div>
+  </section>
+
+  <section class="surpresa">
+    <div class="rev"><button class="btn" id="surpresa">Tenho mais uma coisa para te dizer</button></div>
+  </section>
+
+  <footer>
+    <div class="rev">
+      <svg class="fl"><use href="#flor"/></svg><svg class="fl"><use href="#flor"/></svg><svg class="fl"><use href="#flor"/></svg>
+      <p class="l1" style="margin-top:14px">Com todo amor do mundo, do seu filho.</p>
+      <p class="l2">Feliz aniversário, mãe! ❤️</p>
+    </div>
+  </footer>
+</main>
+
+<!-- AMPLIAR FOTO -->
+<div id="lightbox"><button id="fechar" aria-label="Fechar">×</button><div class="cartao" id="lbCartao"></div></div>
+
+<!-- MENSAGEM FINAL -->
+<div id="final">
+  <div id="chuva"></div>
+  <div class="caixa">
+    <h2>Mãe...</h2>
+    <p>Se eu pudesse escolher novamente, escolheria você para ser minha mãe em todas as vidas. Obrigado por tudo. Você é insubstituível! ❤️</p>
+    <button class="btn" id="voltar">Voltar</button>
+  </div>
+</div>
+
+<script>
+/* ===== FOTOS =====
+   Coloque suas fotos na pasta "fotos" (foto1.jpg, foto2.jpg...)
+   e edite as legendas abaixo. Para mais fotos, copie uma linha. */
+const FOTOS = [
+  { src: "fotos/foto1.jpg", legenda: "Legenda da primeira foto" },
+  { src: "fotos/foto2.jpg", legenda: "Legenda da segunda foto" },
+  { src: "fotos/foto3.jpg", legenda: "Legenda da terceira foto" },
+  { src: "fotos/foto4.jpg", legenda: "Legenda da quarta foto" },
+  { src: "fotos/foto5.jpg", legenda: "Legenda da quinta foto" },
+  { src: "fotos/foto6.jpg", legenda: "Legenda da sexta foto" }
+];
+
+const $ = s => document.querySelector(s);
+const FLOR = '<svg class="fl"><use href="#flor"/></svg>';
+const rnd = (a, b) => a + Math.random() * (b - a);
+
+/* pétalas caindo */
+function petalas(n) {
+  const box = $('#petalas');
+  for (let i = 0; i < n; i++) {
+    const p = document.createElement('div');
+    p.className = 'petala';
+    const t = rnd(10, 22);
+    p.style.cssText = `left:${rnd(0, 100)}vw;width:${t}px;height:${t * 1.25}px;--dx:${rnd(-80, 80)}px;animation-duration:${rnd(9, 18)}s;animation-delay:${rnd(0, 14)}s;background:radial-gradient(circle at 30% 30%,#fff,#f6b3c6);border-radius:80% 0 80% 0`;
+    box.appendChild(p);
+  }
+}
+petalas(18);
+
+/* galeria */
+const gal = $('#galeria');
+FOTOS.forEach((f, i) => {
+  const d = document.createElement('div');
+  d.className = 'polaroid rev';
+  d.style.transitionDelay = (i % 3) * .15 + 's';
+  d.innerHTML = `<div class="foto"><img src="${f.src}" alt="${f.legenda}" loading="lazy"></div><p class="legenda">${f.legenda}</p>`;
+  const img = d.querySelector('img');
+  img.onerror = () => { img.parentNode.innerHTML = FLOR + 'Sua foto aqui'; };
+  d.onclick = () => abrirFoto(f, img.complete && img.naturalWidth > 0);
+  gal.appendChild(d);
+});
+
+const lb = $('#lightbox');
+function abrirFoto(f, existe) {
+  $('#lbCartao').innerHTML = (existe
+    ? `<img src="${f.src}" alt="">`
+    : `<div class="foto">${FLOR}Sua foto aqui</div>`) + `<p>${f.legenda}</p>`;
+  lb.classList.add('on');
+}
+lb.onclick = e => { if (e.target !== $('#lbCartao') && !e.target.closest('.cartao')) lb.classList.remove('on'); };
+$('#fechar').onclick = () => lb.classList.remove('on');
+document.addEventListener('keydown', e => { if (e.key === 'Escape') lb.classList.remove('on'); });
+
+/* abrir presente */
+$('#abrir').onclick = () => {
+  const ini = $('#inicio');
+  chuvaDeFlores(ini, 28);
+  setTimeout(() => {
+    ini.classList.add('saindo');
+    $('#site').classList.add('aberto');
+    document.body.classList.remove('travado');
+    window.scrollTo(0, 0);
+    petalas(14);
+  }, 900);
+};
+
+/* revelar ao rolar */
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) { e.target.classList.add('vis'); io.unobserve(e.target); }
+}), { threshold: .2 });
+document.querySelectorAll('.rev').forEach((el, i) => {
+  if (el.classList.contains('motivo')) el.style.transitionDelay = (i % 3) * .15 + 's';
+  io.observe(el);
+});
+/* carta: linha por linha, com mais calma */
+document.querySelectorAll('.papel p').forEach((p, i) => {
+  p.style.transitionDelay = '0s';
+  io.observe(p);
+});
+
+/* chuva de corações e flores */
+function chuvaDeFlores(alvo, n, continuo) {
+  const c = alvo.id === 'final' ? $('#chuva') : alvo;
+  const emojis = ['❤️', '💗', '🌸', '💕', '🌷', '✨', '🌹'];
+  for (let i = 0; i < n; i++) {
+    const e = document.createElement('span');
+    e.className = 'chove';
+    const usaSvg = Math.random() < .35;
+    e.innerHTML = usaSvg ? FLOR : emojis[Math.floor(rnd(0, emojis.length))];
+    const s = rnd(1.2, 2.8);
+    e.style.cssText = `left:${rnd(0, 100)}%;font-size:${s}rem;--dx:${rnd(-70, 70)}px;--rot:${rnd(-200, 200)}deg;animation-duration:${rnd(4, 8)}s;animation-delay:${rnd(0, 2.5)}s;z-index:2`;
+    c.appendChild(e);
+    setTimeout(() => e.remove(), 11000);
+  }
+}
+let loop;
+$('#surpresa').onclick = () => {
+  $('#final').classList.add('on');
+  chuvaDeFlores($('#final'), 30);
+  loop = setInterval(() => chuvaDeFlores($('#final'), 8), 2500);
+};
+$('#voltar').onclick = () => { $('#final').classList.remove('on'); clearInterval(loop); };
+</script>
+</body>
+</html>
+
